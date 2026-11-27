@@ -1,0 +1,14 @@
+[
+  { "id": "aries", "nombre": "Aries", "glifo": "♈", "elemento": "Fuego", "texto": "Texto de ejemplo: iniciativa, impulso, comienzos." },
+  { "id": "tauro", "nombre": "Tauro", "glifo": "♉", "elemento": "Tierra", "texto": "Texto de ejemplo: constancia, cuerpo, valores." },
+  { "id": "geminis", "nombre": "Géminis", "glifo": "♊", "elemento": "Aire", "texto": "Texto de ejemplo: curiosidad, palabra, vínculos cercanos." },
+  { "id": "cancer", "nombre": "Cáncer", "glifo": "♋", "elemento": "Agua", "texto": "Texto de ejemplo: cuidado, raíces, memoria." },
+  { "id": "leo", "nombre": "Leo", "glifo": "♌", "elemento": "Fuego", "texto": "Texto de ejemplo: expresión, creatividad, centro." },
+  { "id": "virgo", "nombre": "Virgo", "glifo": "♍", "elemento": "Tierra", "texto": "Texto de ejemplo: detalle, servicio, método." },
+  { "id": "libra", "nombre": "Libra", "glifo": "♎", "elemento": "Aire", "texto": "Texto de ejemplo: equilibrio, vínculo, estética." },
+  { "id": "escorpio", "nombre": "Escorpio", "glifo": "♏", "elemento": "Agua", "texto": "Texto de ejemplo: profundidad, transformación, intensidad." },
+  { "id": "sagitario", "nombre": "Sagitario", "glifo": "♐", "elemento": "Fuego", "texto": "Texto de ejemplo: sentido, viaje, búsqueda." },
+  { "id": "capricornio", "nombre": "Capricornio", "glifo": "♑", "elemento": "Tierra", "texto": "Texto de ejemplo: estructura, tiempo, responsabilidad." },
+  { "id": "acuario", "nombre": "Acuario", "glifo": "♒", "elemento": "Aire", "texto": "Texto de ejemplo: comunidad, futuro, independencia." },
+  { "id": "piscis", "nombre": "Piscis", "glifo": "♓", "elemento": "Agua", "texto": "Texto de ejemplo: sensibilidad, imaginación, disolución." }
+]

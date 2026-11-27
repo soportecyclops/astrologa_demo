@@ -1,0 +1,14 @@
+[
+  { "n": 1, "nombre": "Casa I", "tema": "Identidad", "texto": "Texto de ejemplo: cómo te presentás al mundo, el cuerpo, los comienzos." },
+  { "n": 2, "nombre": "Casa II", "tema": "Recursos", "texto": "Texto de ejemplo: valores, dinero propio, lo que te sostiene." },
+  { "n": 3, "nombre": "Casa III", "tema": "Comunicación", "texto": "Texto de ejemplo: hermanos, estudio, intercambio cotidiano." },
+  { "n": 4, "nombre": "Casa IV", "tema": "Raíces", "texto": "Texto de ejemplo: hogar, familia, el origen." },
+  { "n": 5, "nombre": "Casa V", "tema": "Creación", "texto": "Texto de ejemplo: juego, romance, expresión creativa." },
+  { "n": 6, "nombre": "Casa VI", "tema": "Rutina", "texto": "Texto de ejemplo: trabajo diario, hábitos, salud cotidiana." },
+  { "n": 7, "nombre": "Casa VII", "tema": "Vínculos", "texto": "Texto de ejemplo: pareja, socios, el espejo del otro." },
+  { "n": 8, "nombre": "Casa VIII", "tema": "Transformación", "texto": "Texto de ejemplo: recursos compartidos, crisis, intimidad." },
+  { "n": 9, "nombre": "Casa IX", "tema": "Sentido", "texto": "Texto de ejemplo: viajes, creencias, estudios superiores." },
+  { "n": 10, "nombre": "Casa X", "tema": "Vocación", "texto": "Texto de ejemplo: carrera, reconocimiento, rumbo." },
+  { "n": 11, "nombre": "Casa XI", "tema": "Comunidad", "texto": "Texto de ejemplo: amistades, proyectos colectivos, esperanzas." },
+  { "n": 12, "nombre": "Casa XII", "tema": "Inconsciente", "texto": "Texto de ejemplo: retiro, sueños, lo que no se ve." }
+]

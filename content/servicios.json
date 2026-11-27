@@ -1,0 +1,7 @@
+[
+  { "id": "carta-natal", "nombre": "Carta natal", "duracion": 75, "precio": 45000, "descripcion": "Lectura de tu mapa de nacimiento: Sol, Luna, ascendente, planetas y casas." },
+  { "id": "sinastria", "nombre": "Sinastría", "duracion": 90, "precio": 55000, "descripcion": "Comparación de dos cartas para explorar la dinámica de un vínculo." },
+  { "id": "revolucion-solar", "nombre": "Revolución solar", "duracion": 60, "precio": 40000, "descripcion": "El mapa de tu año a partir de tu cumpleaños." },
+  { "id": "transitos", "nombre": "Tránsitos", "duracion": 60, "precio": 38000, "descripcion": "Cómo dialoga el cielo actual con tu carta natal." },
+  { "id": "consulta-puntual", "nombre": "Consulta puntual", "duracion": 30, "precio": 22000, "descripcion": "Una pregunta concreta, una mirada enfocada." }
+]

@@ -1,0 +1,22 @@
+{
+  "nombre": "Selene Aldana",
+  "marca": "Selene Aldana · Astrología",
+  "titulo": "El cielo de hoy, leído para vos.",
+  "frase": "Una mirada serena y rigurosa sobre tu carta natal: herramienta de autoconocimiento, sin promesas mágicas.",
+  "whatsapp": "5491122334455",
+  "email": "hola@seleneastrologia.example",
+  "ciudad": "Buenos Aires, Argentina",
+  "aviso": "Contenido con fines de orientación y entretenimiento. No reemplaza asesoramiento médico, psicológico, legal ni financiero, y no garantiza resultados.",
+  "bio": {
+    "titulo": "Sobre mí",
+    "parrafos": [
+      "Texto de ejemplo, editable en content/site.json. Acompaño procesos de autoconocimiento a través de la astrología, con un enfoque cálido y editorial.",
+      "Estudio y práctica la astrología desde hace años. Trabajo con efemérides reales y con lectura simbólica, siempre como un espacio de orientación y conversación."
+    ]
+  },
+  "testimonios": [
+    { "texto": "Testimonio de ejemplo: una sesión clara y tranquila que me ayudó a ordenar ideas.", "autor": "Persona de ejemplo A" },
+    { "texto": "Testimonio de ejemplo: me gustó que no se prometiera nada, solo reflexión.", "autor": "Persona de ejemplo B" },
+    { "texto": "Testimonio de ejemplo: muy buena explicación de mi carta, paso a paso.", "autor": "Persona de ejemplo C" }
+  ]
+}

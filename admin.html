@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Panel · Selene Aldana</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: #05060f; color: #c9cfe0; padding: 2rem clamp(1rem, 4vw, 3rem); }
+    h1, h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; color: #f1e3bd; }
+    h1 { font-size: 2.6rem; margin: 0 0 1rem; }
+    input, button, textarea, select { font: inherit; padding: .6rem .8rem; background: #0e1130; color: #f1e3bd; border: 1px solid #3a3f6e; border-radius: 0; color-scheme: dark; }
+    button { cursor: pointer; border-color: #d4af37; } button:hover { background: #d4af37; color: #000; }
+    :focus-visible { outline: 2px solid #d4af37; outline-offset: 2px; }
+    nav { display: flex; gap: .5rem; margin-bottom: 1.5rem; flex-wrap: wrap; } nav button[aria-pressed=true] { background: #d4af37; color: #000; }
+    table { width: 100%; border-collapse: collapse; } th, td { text-align: left; padding: .6rem; border-bottom: 1px solid #23274f; vertical-align: top; }
+    th { color: #d4af37; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+    .row { display: flex; gap: .6rem; flex-wrap: wrap; align-items: end; margin-bottom: 1.2rem; } label { display: grid; gap: .2rem; font-size: .8rem; }
+    .off { opacity: .45; text-decoration: line-through; } .msg { color: #8fd; } .err { color: #ff9aa8; }
+    textarea { width: 100%; min-height: 20rem; font-family: ui-monospace, monospace; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <h1>Panel de la astróloga</h1>
+  <form id="login" class="row"><label>Clave<input type="password" id="pw" autocomplete="current-password" required /></label><button>Ingresar</button><span class="err" id="login-err" role="alert"></span></form>
+  <div id="app" hidden>
+    <nav aria-label="Secciones"><button data-tab="turnos" aria-pressed="true">Turnos</button><button data-tab="bloqueos" aria-pressed="false">Bloqueos</button><button data-tab="horarios" aria-pressed="false">Horarios</button><button id="logout">Salir</button></nav>
+    <section id="t-turnos"></section>
+    <section id="t-bloqueos" hidden></section>
+    <section id="t-horarios" hidden></section>
+    <p class="msg" id="msg" role="status"></p>
+  </div>
+  <script type="module" src="/src/admin.ts"></script>
+</body>
+</html>
