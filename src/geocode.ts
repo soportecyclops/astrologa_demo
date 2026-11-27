@@ -45,7 +45,7 @@ export function initAutocomplete(input: HTMLInputElement, list: HTMLUListElement
     input.setAttribute('aria-activedescendant', `${list.id}-${active}`);
     list.querySelectorAll('[role=option]')[active]?.scrollIntoView({ block: 'nearest' });
   };
-  input.addEventListener('focus', () => { if (!input.value.trim()) render(INICIALES); });
+  input.addEventListener('focus', () => { input.scrollIntoView({ block: 'center', behavior: 'smooth' }); if (!input.value.trim()) render(INICIALES); });
   input.addEventListener('input', () => {
     onPick(null);
     clearTimeout(timer); ctl?.abort();

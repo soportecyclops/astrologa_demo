@@ -20,7 +20,7 @@ function go(n: number) {
     steps.querySelectorAll('li').forEach((li, i) => { li.classList.toggle('on', i === n); li.classList.toggle('done', i < n); if (i === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current'); });
     body.replaceChildren();
     [stepServicio, stepFecha, stepDatos, stepOk][n]();
-    if (!reduce) gsap.from(body.children, { opacity: 0, y: 24, duration: 0.6, ease: 'power3.out', stagger: 0.06 });
+    if (!reduce && body.children.length) gsap.from(body.children, { opacity: 0, y: 24, duration: 0.6, ease: 'power3.out', stagger: 0.06 });
     (body.querySelector('h3,button,input') as HTMLElement | null)?.focus({ preventScroll: true });
   };
   if (prev && !reduce) gsap.to(body.children, { opacity: 0, y: -16, duration: 0.25, onComplete: render }); else render();
@@ -65,7 +65,7 @@ async function stepFecha() {
     const r = await fetch(`/api/availability?servicio=${s.id}&fecha=${state.fecha}`).then((x) => x.json()).catch(() => ({ slots: [] }));
     box.innerHTML = r.slots.map((h: string) => `<button type="button" aria-pressed="${state.hora === h}">${h}</button>`).join('') || '<p class="note">Sin horarios para ese día.</p>';
     box.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { state.hora = b.textContent!; box.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', 'false')); b.setAttribute('aria-pressed', 'true'); (body.querySelector('#next-step') as HTMLButtonElement).disabled = false; }));
-    if (!reduce) gsap.from(box.children, { opacity: 0, y: 10, duration: 0.4, stagger: 0.03 });
+    if (!reduce && box.children.length) gsap.from(box.children, { opacity: 0, y: 10, duration: 0.4, stagger: 0.03 });
   };
   body.querySelector('#prev')!.addEventListener('click', () => { state.mes = new Date(state.mes.getFullYear(), state.mes.getMonth() - 1, 1); draw(); });
   body.querySelector('#next')!.addEventListener('click', () => { state.mes = new Date(state.mes.getFullYear(), state.mes.getMonth() + 1, 1); draw(); });

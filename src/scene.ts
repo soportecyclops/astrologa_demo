@@ -81,7 +81,7 @@ export class Orrery {
   running = true;
   frozen = false;
   mobile: boolean;
-  private clock = new THREE.Clock();
+  private last = performance.now();
   private ray = new THREE.Raycaster();
   private t = 0;
 
@@ -224,8 +224,10 @@ export class Orrery {
       const pos = pl.group.position.clone();
       const out = pos.clone().normalize();
       if (!out.lengthSq()) out.set(1, 0, 0);
-      const dist = pl.radius * (s.id === 'Earth' ? 2.1 : 5.5);
-      return { pos: pos.clone().add(out.multiplyScalar(dist)).add(new THREE.Vector3(0, pl.radius * 1.4, 0)), target: pos };
+      const dist = pl.radius * (s.id === 'Earth' ? 2.6 : 5.5);
+      const tan = new THREE.Vector3(-out.z, 0, out.x);
+      // de costado y algo hacia el Sol, para ver la cara iluminada
+      return { pos: pos.clone().add(tan.multiplyScalar(dist * 0.9)).add(out.multiplyScalar(-dist * 0.45)).add(new THREE.Vector3(0, pl.radius * 1.2, 0)), target: pos };
     };
     const a = poseOf(stops[i]), b = poseOf(stops[Math.min(i + 1, stops.length - 1)]);
     return { pos: a.pos.clone().lerp(b.pos, e), target: a.target.clone().lerp(b.target, e) };
@@ -251,7 +253,9 @@ export class Orrery {
     const loop = () => {
       requestAnimationFrame(loop);
       if (!this.running) return;
-      const dt = Math.min(this.clock.getDelta(), 0.1);
+      const now = performance.now();
+      const dt = Math.min((now - this.last) / 1000, 0.1);
+      this.last = now;
       this.t += dt;
       this.tick(dt);
       this.renderer.render(this.scene, this.camera);

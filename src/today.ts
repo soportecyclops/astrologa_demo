@@ -9,23 +9,17 @@ export function renderPlanetList(ul: HTMLElement, pos: ReturnType<typeof posicio
 function drawMoon(canvas: HTMLCanvasElement, angulo: number) {
   const ctx = canvas.getContext('2d')!, w = canvas.width, c = w / 2, r = w * 0.4;
   ctx.clearRect(0, 0, w, w);
+  ctx.fillStyle = '#10132b'; ctx.beginPath(); ctx.arc(c, c, r, 0, 7); ctx.fill();
   const g = ctx.createRadialGradient(c - r * 0.3, c - r * 0.3, r * 0.1, c, c, r);
   g.addColorStop(0, '#f4f1e6'); g.addColorStop(1, '#a9afc4');
-  // disco oscuro
-  ctx.fillStyle = '#10132b'; ctx.beginPath(); ctx.arc(c, c, r, 0, 7); ctx.fill();
-  ctx.strokeStyle = 'rgba(212,175,55,.7)'; ctx.lineWidth = 1.5; ctx.stroke();
-  // parte iluminada: semicírculo + elipse terminador
-  const rad = (angulo * Math.PI) / 180;
-  const k = Math.cos(rad); // 1 nueva … -1 llena
-  const crece = angulo < 180;
-  ctx.save(); ctx.beginPath(); ctx.arc(c, c, r - 1, 0, 7); ctx.clip();
+  // Vista desde el hemisferio sur: creciente iluminada a la izquierda, menguante a la derecha.
+  const lado = angulo < 180 ? -1 : 1;
+  const k = Math.cos((angulo * Math.PI) / 180); // 1 nueva … -1 llena
   ctx.fillStyle = g; ctx.beginPath();
-  const dir = crece ? 1 : -1; // el hemisferio sur ve la luna creciente iluminada a la izquierda
-  ctx.arc(c, c, r, -Math.PI / 2, Math.PI / 2, crece ? true : false);
-  ctx.ellipse(c, c, Math.abs(k) * r, r, 0, Math.PI / 2, -Math.PI / 2, (k > 0) === crece);
-  ctx.fill();
-  void dir;
-  ctx.restore();
+  for (let i = 0; i <= 60; i++) { const t = -Math.PI / 2 + (i / 60) * Math.PI; ctx.lineTo(c + lado * r * Math.cos(t), c + r * Math.sin(t)); }
+  for (let i = 0; i <= 60; i++) { const t = Math.PI / 2 - (i / 60) * Math.PI; ctx.lineTo(c + lado * k * r * Math.cos(t), c + r * Math.sin(t)); }
+  ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = 'rgba(212,175,55,.7)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(c, c, r, 0, 7); ctx.stroke();
 }
 
 export function initToday() {

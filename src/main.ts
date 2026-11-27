@@ -161,7 +161,7 @@ if (orrery && !reduce) {
   const baseYear = new Date().getFullYear();
   let lastIdx = -1, wheelShown = false;
   ScrollTrigger.create({
-    trigger: '#viaje', start: 'top top', end: '+=650%', pin: '.viaje-pin', scrub: 0.6, anticipatePin: 1,
+    trigger: '#viaje', start: 'top top', end: '+=650%', pin: '#viaje', pinSpacing: true, scrub: 0.6, anticipatePin: 1,
     onToggle: (s) => { pinnedActive = s.isActive; if (s.isActive) { o.focusPlanet(null); o.mode = 'scroll'; } else if (o.mode === 'scroll') o.mode = 'hero'; },
     onUpdate: (s) => {
       const p = s.progress;
