@@ -80,7 +80,7 @@ function stepDatos() {
     <label>Email<input name="email" required type="email" autocomplete="email" value="${v('email')}" /></label>
     <p class="note" style="margin-top:.6rem">Datos de nacimiento (para preparar tu carta)</p>
     <div class="row2"><label>Fecha<input type="date" name="nfecha" value="${v('nfecha', pre.fecha ?? '')}" /></label><label>Hora<input type="time" name="nhora" value="${v('nhora', pre.hora ?? '')}" /></label></div>
-    <label>Lugar<input name="nlugar" list="ciudades2" value="${v('nlugar', pre.lugar ?? '')}" placeholder="Ciudad, país" /><datalist id="ciudades2">${ciudades.map((c) => `<option value="${c.nombre}">`).join('')}</datalist></label>
+    <label>Lugar<input name="nlugar" list="ciudades2" value="${v('nlugar', pre.lugar ?? '')}" placeholder="Ciudad, país" /><datalist id="ciudades2">${ciudades.slice(0, 10).map((c) => `<option value="${c.nombre}">`).join('')}</datalist></label>
     <label>Mensaje <small>(opcional)</small><textarea name="mensaje" rows="3">${v('mensaje')}</textarea></label>
     <p class="err" id="err" role="alert" hidden></p>
     <div class="step-actions"><button type="button" class="btn btn-ghost" id="back">Volver</button><button class="btn btn-gold" type="submit">Confirmar reserva</button></div></form>`;

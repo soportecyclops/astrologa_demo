@@ -237,3 +237,11 @@ input:focus, select:focus, textarea:focus { border-color: var(--gold); outline: 
   .grain { animation: none; }
   .scroll-cue i { animation: none; }
 }
+
+.ac { position: relative; margin-top: -1rem; }
+.ac-list { position: absolute; z-index: 20; left: 0; right: 0; top: 100%; margin: 2px 0 0; padding: 0; list-style: none; background: #0b0e2a; border: 1px solid var(--gold); max-height: 17rem; overflow: auto; }
+.ac-list li { padding: .7rem 1rem; cursor: pointer; color: var(--champ); }
+.ac-list li[aria-selected='true'], .ac-list li:hover { background: rgba(212,175,55,.18); }
+.ac-list .ac-note { cursor: default; color: var(--muted); font-size: .8rem; }
+.ac-list[hidden] { display: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

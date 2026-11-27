@@ -114,10 +114,12 @@
         <form id="natal-form" class="form" novalidate>
           <label>Fecha de nacimiento<input type="date" name="fecha" required max="2100-12-31" min="1900-01-01" /></label>
           <label>Hora de nacimiento <small>(opcional)</small><input type="time" name="hora" /></label>
-          <label>Ciudad de nacimiento
-            <input list="ciudades" name="ciudad" placeholder="Empezá a escribir…" autocomplete="off" />
-            <datalist id="ciudades"></datalist>
-          </label>
+          <label for="ciudad">Ciudad de nacimiento</label>
+          <div class="ac">
+            <input id="ciudad" name="ciudad" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="ciudad-list" placeholder="Empezá a escribir…" autocomplete="off" />
+            <ul id="ciudad-list" class="ac-list" role="listbox" aria-label="Sugerencias de ciudades" hidden></ul>
+            <span id="ciudad-status" class="sr" role="status" aria-live="polite"></span>
+          </div>
           <button class="btn btn-gold" type="submit">Trazar mi cielo</button>
           <p class="note" id="natal-note">Sin hora y ciudad mostramos solo planetas en signos. Con ambas calculamos ascendente y casas (por signo entero).</p>
         </form>
